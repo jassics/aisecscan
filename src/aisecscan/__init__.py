@@ -1,3 +1,3 @@
-"""aisecscan — static security scanner for AI/LLM/agentic repos (any coding assistant, MCP, agents, skills, LLM app code, AI supply chain)."""
+"""aisecscan — static security scanner for Claude Code configs (.claude/, .mcp.json, CLAUDE.md), MCP servers, subagents, and skills."""
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"

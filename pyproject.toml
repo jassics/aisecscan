@@ -5,12 +5,12 @@ build-backend = "hatchling.build"
 [project]
 name = "aisecscan"
 dynamic = ["version"]
-description = "Static security scanner for AI/LLM/agentic repos: any AI coding assistant config (Claude, Cursor, Copilot, Windsurf, Cline, ...), MCP servers, agents, skills, LLM app code, and AI supply chain (Checkov for AI agent stacks)."
+description = "Static security scanner for Claude Code configs (.claude/, .mcp.json, CLAUDE.md), MCP servers, subagents, and skills. Cursor, Copilot, Windsurf, Cline, LLM app-code, and AI supply-chain checks are on the roadmap."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "Apache-2.0" }
 authors = [{ name = "Sanjeev Jaiswal (Jassi)", email = "jassics@gmail.com" }]
-keywords = ["agentic-ai", "agent-security", "security", "sast", "static-analysis", "mcp", "llm-security", "devsecops", "claude-code", "cursor", "ai-supply-chain", "owasp"]
+keywords = ["agentic-ai", "agent-security", "security", "sast", "static-analysis", "mcp", "llm-security", "devsecops", "claude-code", "owasp"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
