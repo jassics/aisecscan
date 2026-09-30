@@ -51,6 +51,31 @@ aisecscan list-checks                  # show the check catalog
 Every resource is tagged with its **scope** (project / local / user / managed /
 plugin), so a single run cleanly covers a repo, your global config, or both.
 
+## Use as a library
+
+`aisecscan` is a plain importable package, not just a CLI — `discover()` and
+`run_checks()` are ordinary functions returning dataclasses (`Resource`,
+`Finding`), so you can call the scanner from your own scripts, CI tooling, or
+another security pipeline:
+
+```python
+from pathlib import Path
+from aisecscan.discovery import discover
+from aisecscan.engine import run_checks, filter_by_threshold
+from aisecscan.models import Severity
+
+resources = discover(repo_root=Path("."), include_user=False)
+findings = run_checks(resources)
+findings = filter_by_threshold(findings, Severity.HIGH)
+
+for f in findings:
+    print(f.severity.name, f.check_id, f.location, f.title)
+```
+
+See `docs/api-reference.md` for the full API (`discover`, `run_checks`,
+`filter_by_threshold`, `apply_model_tier`, `Resource`, `Finding`, `Severity`,
+and the `checks` registry).
+
 ## Check catalog (v1)
 
 | ID | Severity | What it catches |
